@@ -57,5 +57,4 @@ config :pruebaBien, PruebaBien.Repo,
   hostname: "JUPITER",
   instance_name: "MSSQLSERVER",
   port: "1433",
-  pool_size: 10,
-  
+  pool_size: 10

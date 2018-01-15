@@ -1,20 +1,37 @@
 # PruebaBien
 
-To start your Phoenix server:
+  Este es un proyecto de prueba utilizando elixir, ecto, phoenix y SQL Server
 
-  * Install dependencies with `mix deps.get`
-  * Create and migrate your database with `mix ecto.create && mix ecto.migrate`
-  * Install Node.js dependencies with `cd assets && npm install`
-  * Start Phoenix endpoint with `mix phx.server`
+  * Inicio del proyecto: `mix phx.new pruebaBien --database mssql`
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+## Configuración inicial
 
-Ready to run in production? Please [check our deployment guides](http://www.phoenixframework.org/docs/deployment).
+  Antes de ejecutar `mix deps.get` debemos configurar el archivo mix.exs y dev.exs
 
-## Learn more
+### mix.exs
+  ```
+    def application do
+    [
+      mod: {PruebaBien.Application, []},
+      extra_applications: [:logger, :runtime_tools, :mssqlex, :mssql_ecto]
+    ]
+    end
+  ```
+  ```
+    defp deps do
+        [
+          {:phoenix, "~> 1.3.0"},
+          {:phoenix_pubsub, "~> 1.0"},
+          {:phoenix_ecto, "~> 3.2"},
+          {:mssql_ecto, "~> 0.3.1"},
+          {:mssqlex, "~> 0.8.0"},
+          {:phoenix_html, "~> 2.10"},
+          {:phoenix_live_reload, "~> 1.0", only: :dev},
+          {:gettext, "~> 0.11"},
+          {:cowboy, "~> 1.0"},
+          {:ex_doc, "~> 0.12"},
+          { :uuid, "~> 1.1" }
+        ]
+    end
+  ```
 
-  * Official website: http://www.phoenixframework.org/
-  * Guides: http://phoenixframework.org/docs/overview
-  * Docs: https://hexdocs.pm/phoenix
-  * Mailing list: http://groups.google.com/group/phoenix-talk
-  * Source: https://github.com/phoenixframework/phoenix
