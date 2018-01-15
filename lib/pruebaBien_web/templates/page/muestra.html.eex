@@ -1,0 +1,38 @@
+<%= @tema.nombre %>
+<br>
+<%= @tema.descripcion %>
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+    window.createSocket(<%= @tema.id %>)
+});
+</script>
+
+
+<br>
+<br>
+<br>
+<input type="text" id="valorId" name="nombre" id="nombre" placeholder="Nombre">
+<button class="btn btn-primary">Registrar</button>
+<br>
+
+
+<h3>Usuarios Registrados</h3>
+<hr>
+<table class="table">
+    <thead>
+        <tr>
+            <th colspan="2">Nombre</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <%= for banco <- @usuarios do %>
+            <tr>
+              <td><%= banco.nombre %> </td>
+              <td><button class="btn">borrar</button></td>
+                
+                
+            </tr>
+        <% end %>
+    </tbody>
+</table>
