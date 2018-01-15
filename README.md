@@ -34,4 +34,19 @@
         ]
     end
   ```
+### dev.exs
+  ```
+    config :pruebaBien, PruebaBien.Repo,
+      adapter: MssqlEcto,
+      database: "Elixir_prueba_ruben",
+      username: "sa",
+      password: "PASSWORD",
+      hostname: "HOSTNAME",
+      instance_name: "MSSQLSERVER",
+      port: "1433",
+      pool_size: 10
+  ```
 
+Se ejecuta en consola: `mix phx.server`
+
+Ingresamos a: `http://localhost:4200`
